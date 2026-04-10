@@ -1,0 +1,13 @@
+launch:
+  - arg:
+      name: labelspace_name
+      default: ade20k
+
+  - node:
+      pkg: semantic_inference_ros
+      exec: remote_segmentation_node
+      name: remote_segmentation
+      output: screen
+      param:
+        - name: labelspace_name
+          value: $(var labelspace_name)
