@@ -12,11 +12,11 @@ ros2 launch semantic_inference_ros remote_segmentation.launch.yaml **(for both o
 ros2 launch hydra_ros uhumans2_remote.launch.yaml use_gt_semantics:=false **(only for office)**
 ```
 <h1>New files to add in hydra_ws:</h1>
-
-1. /hydra_ws/src/semantic_inference/semantic_inference_ros/launch/remote_segmentation.launch.yaml
-2. /hydra_ws/src/hydra_ros/launch/datasets/uhumans2_remote.launch.yaml (for gt_semantic:=false)
-3. semantic_inference/semantic_inference_ros/semantic_inference_ros/remote_segmentation_node.py
-
+```
+/hydra_ws/src/semantic_inference/semantic_inference_ros/launch/remote_segmentation.launch.yaml
+/hydra_ws/src/hydra_ros/launch/datasets/uhumans2_remote.launch.yaml (for gt_semantic:=false)
+semantic_inference/semantic_inference_ros/semantic_inference_ros/remote_segmentation_node.py
+```
 <h1>Observations:</h1>
 1. Newly published topics include: <br>/tesse/left_cam/semantic/image_raw <br>/tesse/left_cam/semantic/mask<br>
 2. The server segmentation output is in black and white even though the input image is colored.<br>
