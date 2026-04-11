@@ -1,12 +1,17 @@
 **Note: In remote_segmentation_node.py, change subscription topic to a topic from the dataset which is being played.**
 
 <h1>Steps to run segmentation on colab </h1>
-Run wsl-colab.ipynb 
-Terminal 1: Once server starts, play rosbag 
-Terminal 2: 
+
+1. Run wsl-colab.ipynb
+2. Terminal 1: Once server starts, play rosbag 
+3. Terminal 2:
+
 source ~/hydra_ws/install/setup.bash
+
 ros2 launch semantic_inference_ros remote_segmentation.launch.yaml **(for both office/lab dataset)**
+
 (or)
+
 ros2 launch hydra_ros uhumans2_remote.launch.yaml use_gt_semantics:=false **(only for office)**
 
 <h1>New files to add in hydra_ws:</h1>
