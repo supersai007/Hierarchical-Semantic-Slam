@@ -12,6 +12,7 @@ ros2 launch semantic_inference_ros remote_segmentation.launch.yaml **(for both o
 ros2 launch hydra_ros uhumans2_remote.launch.yaml use_gt_semantics:=false **(only for office)**
 ```
 <h1>New files to add in hydra_ws:</h1>
+
 ```
 /hydra_ws/src/semantic_inference/semantic_inference_ros/launch/remote_segmentation.launch.yaml
 /hydra_ws/src/hydra_ros/launch/datasets/uhumans2_remote.launch.yaml (for gt_semantic:=false)
