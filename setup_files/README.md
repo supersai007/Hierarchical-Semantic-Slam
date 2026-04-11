@@ -23,6 +23,7 @@ semantic_inference/semantic_inference_ros/semantic_inference_ros/remote_segmenta
 
 <h2>Observations:</h2>
 1. Newly published topics include:
+
 /tesse/left_cam/semantic/image_raw
 
 /tesse/left_cam/semantic/mask
