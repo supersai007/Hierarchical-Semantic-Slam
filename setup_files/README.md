@@ -21,9 +21,11 @@ The server segmentation output is in black and white even though the input image
 While running
 ros2 launch hydra_ros uhumans2_remote.launch.yaml use_gt_semantics:=false
 The 3D mesh is incomplete and also in black and white.
+<img width="1907" height="669" alt="image" src="https://github.com/user-attachments/assets/5b91b453-1b00-4746-af58-ded85c53ffd9" />
 
 
 Sample input and server segmentation output:
+<img width="407" height="267" alt="image" src="https://github.com/user-attachments/assets/1e4c7295-bc88-4c6e-876e-17cbccc6abcf" />
 
 <img width="720" height="480" alt="reality" src="https://github.com/user-attachments/assets/0b841e28-f4e1-4aa4-9b05-22001555b08d" />
 
