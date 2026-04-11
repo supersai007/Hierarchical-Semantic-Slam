@@ -24,7 +24,7 @@ class RemoteSegmentationNode(Node):
 
         self.subscription = self.create_subscription(
             Image,
-            "/tesse/left_cam/rgb/image_raw",
+            "/tesse/left_cam/rgb/image_raw",  # change to --> /D435/color/image_raw while playing lab dataset
             self.image_callback,
             10
         )
