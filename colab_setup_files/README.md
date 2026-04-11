@@ -29,12 +29,8 @@ The 3D mesh is incomplete and also in black and white.
 
 Sample input and server segmentation output:
 
-| Image | Reality |
+| Image | Output |
 | --- | --- |
 | <img width="520" height="480" alt="image" src="https://github.com/user-attachments/assets/1e4c7295-bc88-4c6e-876e-17cbccc6abcf" />| <img width="520" height="480" alt="reality" src="https://github.com/user-attachments/assets/0b841e28-f4e1-4aa4-9b05-22001555b08d" /> |
-
-<img width="520" height="480" alt="image" src="https://github.com/user-attachments/assets/1e4c7295-bc88-4c6e-876e-17cbccc6abcf" />
-
-<img width="520" height="480" alt="reality" src="https://github.com/user-attachments/assets/0b841e28-f4e1-4aa4-9b05-22001555b08d" />
 
 **Note that these are the colored, resized version of the output mask, the original output is very small and in black and white.**
