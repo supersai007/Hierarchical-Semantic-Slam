@@ -20,10 +20,10 @@ ros2 launch hydra_ros uhumans2_remote.launch.yaml use_gt_semantics:=false **(onl
 2. /hydra_ws/src/hydra_ros/launch/datasets/uhumans2_remote.launch.yaml (for gt_semantic:=false)
 3. semantic_inference/semantic_inference_ros/semantic_inference_ros/remote_segmentation_node.py
 
-<h2>Observations:</h2>
-1. Newly published topics include: <br>/tesse/left_cam/semantic/image_raw <br>/tesse/left_cam/semantic/mask
-2. The server segmentation output is in black and white even though the input image is colored.
-3. While running
+<h1>Observations:</h1>
+1. Newly published topics include: <br>/tesse/left_cam/semantic/image_raw <br>/tesse/left_cam/semantic/mask<br>
+2. The server segmentation output is in black and white even though the input image is colored.<br>
+3. While running <br>
 <b>ros2 launch hydra_ros uhumans2_remote.launch.yaml use_gt_semantics:=false</b>
 The 3D mesh is incomplete and also in black and white.
 <img width="1907" height="669" alt="image" src="https://github.com/user-attachments/assets/5b91b453-1b00-4746-af58-ded85c53ffd9" />
