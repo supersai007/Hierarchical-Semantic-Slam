@@ -34,7 +34,9 @@ Terminal 1:
 ros2 bag play ~/lab_walk --clock --qos-profile-overrides-path ~/.tf_overrides.yaml
 ```
 
-Terminal 2:
+Terminal 2: 
+
+(Packages like FAST-LIO can also be used to publish odom topic, but kiss-icp (https://github.com/prbonn/kiss-icp) is easy to install and run)
 
 ```
 ros2 launch kiss_icp odometry.launch.py \
@@ -43,6 +45,8 @@ ros2 launch kiss_icp odometry.launch.py \
 ```
 
 Terminal 3:
+
+Record ONLY the odometry/TF output
 
 ```
 ros2 bag record \
@@ -57,7 +61,9 @@ ros2 bag record \
 
 <img width="512" height="299" alt="lab_walk_odom2" src="https://github.com/user-attachments/assets/9c2d0e38-c5c9-4f20-a292-dcac4d680792" />
 
+
 Then merge datasets using rosbag_merger.py.
+
 
 <img width="512" height="379" alt="lab_walk_final" src="https://github.com/user-attachments/assets/76990d2c-14e4-4dfd-8666-86bd3c6eb442" />
 
