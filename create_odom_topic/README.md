@@ -8,7 +8,7 @@
 
 <h2> 1. Timestamp Issue </h2>
 
- Original dataset bag_pcd_topics.bag (https://drive.google.com/file/d/1tzW6thTRXQ0bI0ww_szm42AGpsbLk6Ay/view?usp=sharing) cannot be played as it is because ros 2 expects the bag file to be a folder which contains metadata.yaml and a .db3 or .mcap file. Hence I converted the bagfile to the required format using:
+ Original dataset bag_pcd_topics.bag (https://drive.google.com/file/d/1tzW6thTRXQ0bI0ww_szm42AGpsbLk6Ay/view?usp=sharing) cannot be played as it is, because ros 2 expects the bag file to be a folder with a metadata.yaml and a .db3 or .mcap file. Hence I converted the bagfile to the required format using:
 
  ```
 rosbags-convert --src path/to/office.bag --dst path/to/office
@@ -37,6 +37,7 @@ ros2 bag play ~/lab_walk --clock --qos-profile-overrides-path ~/.tf_overrides.ya
 Terminal 2: 
 
 (Packages like FAST-LIO can also be used to publish odom topic, but kiss-icp (https://github.com/prbonn/kiss-icp) is easy to install and run)
+(use simulated time from the /clock topic instead of the system clock to avoid timestamp mismatch)
 
 ```
 ros2 launch kiss_icp odometry.launch.py \
