@@ -13,7 +13,19 @@ scp *.zip <netid>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/<netid>/semant
 
 scp -r "lab_walk" <netid>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/<netid>/semantics/dataset/lab_walk/
 
-## create train_job.slurm script to run training script as job on GPU
+#### create train_job.slurm script to run training script as job
+
+## commands to run training on cluster:
+
+create job
+```
+sbatch train_job.slurm
+```
+check status
+```
+squeue -u <netid>
+```
+once job is done, check logs at ~/semantics/logs/oneformer_train_<jobid>.txt
 
 ## Once training done, send model weights back to local
 
