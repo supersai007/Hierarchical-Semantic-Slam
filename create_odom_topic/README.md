@@ -68,4 +68,17 @@ Then merge datasets using rosbag_merger.py.
 
 <img width="512" height="379" alt="lab_walk_final" src="https://github.com/user-attachments/assets/76990d2c-14e4-4dfd-8666-86bd3c6eb442" />
 
+Initial tree after merging topic with dataset:
+
+<img width="941" height="815" alt="Screenshot 2026-04-30 235930" src="https://github.com/user-attachments/assets/5fe9077a-81e9-4170-9950-4b364d8e41c9" />
+
+Run static_tf in separate terminal every time while playing bag file to merge odom to d435 color frame:
+
+```
+ros2 run tf2_ros static_transform_publisher 0.04 0.07 -0.12 1.57 -2.4 0.0 D435_color_optical_frame livox_frame 
+```
+
+<img width="706" height="984" alt="Screenshot 2026-05-01 001933" src="https://github.com/user-attachments/assets/445ae450-0697-4e68-84d9-991369f48838" />
+
+
 
