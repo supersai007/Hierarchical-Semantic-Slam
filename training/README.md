@@ -26,6 +26,12 @@ check status
 squeue -u <netid>
 ```
 
+once job is done, check logs at ~/semantics/logs/oneformer_train_<jobid>.txt
+
+## Once training done, send model weights back to local
+
+scp -r <netid>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/<netid>/semantics/models/oneformer_ade20k_swin_large/trained_on_uhumans/oneformer_uhumans2_best hydra_ws/model/
+
 # Verifying results
 
 Log loss curve:
@@ -39,11 +45,4 @@ Before training:
 After training:
 
 <img width="1569" height="510" alt="image" src="https://github.com/user-attachments/assets/28d3d9c1-a83d-4016-8479-e6d93c1fc75a" />
-
-```
-once job is done, check logs at ~/semantics/logs/oneformer_train_<jobid>.txt
-
-## Once training done, send model weights back to local
-
-scp -r <netid>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/<netid>/semantics/models/oneformer_ade20k_swin_large/trained_on_uhumans/oneformer_uhumans2_best hydra_ws/model/
 
