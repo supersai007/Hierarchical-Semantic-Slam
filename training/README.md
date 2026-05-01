@@ -25,6 +25,22 @@ check status
 ```
 squeue -u <netid>
 ```
+
+# Verifying results
+
+Log loss curve:
+
+<img width="1005" height="547" alt="image" src="https://github.com/user-attachments/assets/1421bc91-908b-43a0-8467-f7985aa5baad" />
+
+Before training:
+
+<img width="1570" height="345" alt="image" src="https://github.com/user-attachments/assets/86cee422-c6f4-4460-95db-5483d5aee8bc" />
+
+After training:
+
+<img width="1569" height="510" alt="image" src="https://github.com/user-attachments/assets/28d3d9c1-a83d-4016-8479-e6d93c1fc75a" />
+
+```
 once job is done, check logs at ~/semantics/logs/oneformer_train_<jobid>.txt
 
 ## Once training done, send model weights back to local
