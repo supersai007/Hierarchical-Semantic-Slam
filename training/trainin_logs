@@ -38,7 +38,7 @@ Dataset: 8307 samples
 Testing single sample...
 Keys: ['pixel_values', 'pixel_mask', 'mask_labels', 'class_labels', 'text_inputs', 'task_inputs']
 pixel_values shape: torch.Size([3, 640, 960])
-Single sample OK ✓
+Single sample OK
 
 Training on: cuda
   Epoch 1 [0/2077] loss: 104.2208
@@ -147,7 +147,7 @@ Training on: cuda
   Epoch 1 [2060/2077] loss: 24.5170
 Epoch 1 avg loss: 29.9906
 Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.15it/s]
-  ✓ Saved best model (loss=29.9906)
+  Saved best model (loss=29.9906)
   Epoch 2 [0/2077] loss: 24.7737
   Epoch 2 [20/2077] loss: 25.7776
   Epoch 2 [40/2077] loss: 27.0407
@@ -254,7 +254,7 @@ Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.
   Epoch 2 [2060/2077] loss: 24.1288
 Epoch 2 avg loss: 25.5929
 Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.09s/it]
-  ✓ Saved best model (loss=25.5929)
+  Saved best model (loss=25.5929)
   Epoch 3 [0/2077] loss: 26.6370
   Epoch 3 [20/2077] loss: 23.2961
   Epoch 3 [40/2077] loss: 23.8134
@@ -361,7 +361,7 @@ Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.
   Epoch 3 [2060/2077] loss: 23.3416
 Epoch 3 avg loss: 24.8246
 Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.01it/s]
-  ✓ Saved best model (loss=24.8246)
+  Saved best model (loss=24.8246)
   Epoch 4 [0/2077] loss: 25.9902
   Epoch 4 [20/2077] loss: 23.0206
   Epoch 4 [40/2077] loss: 24.4168
@@ -468,7 +468,7 @@ Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.
   Epoch 4 [2060/2077] loss: 21.1492
 Epoch 4 avg loss: 24.3087
 Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.01s/it]
-  ✓ Saved best model (loss=24.3087)
+  Saved best model (loss=24.3087)
   Epoch 5 [0/2077] loss: 25.1993
   Epoch 5 [20/2077] loss: 24.3952
   Epoch 5 [40/2077] loss: 22.3989
@@ -575,7 +575,7 @@ Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.
   Epoch 5 [2060/2077] loss: 23.5166
 Epoch 5 avg loss: 23.9296
 Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.00it/s]
-  ✓ Saved best model (loss=23.9296)
+  Saved best model (loss=23.9296)
   Epoch 6 [0/2077] loss: 24.0374
   Epoch 6 [20/2077] loss: 21.7494
   Epoch 6 [40/2077] loss: 23.5841
@@ -682,7 +682,7 @@ Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.
   Epoch 6 [2060/2077] loss: 25.5392
 Epoch 6 avg loss: 23.6480
 Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.05s/it]
-  ✓ Saved best model (loss=23.6480)
+  Saved best model (loss=23.6480)
   Epoch 7 [0/2077] loss: 23.5170
   Epoch 7 [20/2077] loss: 21.7816
   Epoch 7 [40/2077] loss: 23.2669
@@ -789,6 +789,6 @@ Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.
   Epoch 7 [2060/2077] loss: 23.8977
 Epoch 7 avg loss: 23.5005
 Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.00it/s]
-  ✓ Saved best model (loss=23.5005)
+  Saved best model (loss=23.5005)
 Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.20it/s]
 Training complete.
