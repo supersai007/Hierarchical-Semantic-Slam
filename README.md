@@ -21,3 +21,8 @@ source ~/rosbags_env/bin/activate
 source /opt/ros/jazzy/setup.bash
 ros2 bag play ~/office_bag   --clock   --qos-profile-overrides-path ~/.tf_overrides.yaml   --read-ahead-queue-size 20000 -l
 ```
+
+uHumans office dataset structure:
+
+<img width="1072" height="571" alt="image" src="https://github.com/user-attachments/assets/5a1b2995-5750-48fe-95ca-8d9a491f6613" />
+
