@@ -29,10 +29,6 @@ python -c "import rclpy; print('ROS 2 is ready!')"
 ```
 
 ## Step3: Create scripts to get semantics and run job
-
-Create files pre_trained_oneformer_on_labwalk.py and run_semantics_on_labwalk.sh 
-
-Create the slurm job to run the segmentation in the GPU.
 ```
 cd ~/semantics
 
@@ -80,16 +76,4 @@ Service information:
 ```
 
 ### command to send folder back to local
-scp -r <netid>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/<netid>/semantics/dataset/lab_walk_seg/ bags/lab_walk_completed
-
-## Step5: Create new config file
-
-location: /home/vsman/hydra_ws/src/hydra_ros/hydra_ros/config/my_dataset_config.yaml
-
-reference: integrate_labwalk_to_hydra\my_dataset_config.yaml
-
-## Step6: Create new launch file
-
-location: /home/vsman/hydra_ws/src/hydra_ros/hydra_ros/launch/datasets/my_dataset.launch.yaml
-
-reference: integrate_labwalk_to_hydra\my_dataset.launch.yaml
+scp -r <netid>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/<netid>/semantics/dataset/lab_walk_7526_wsemantics/ bags/lab_walk_7526_wsemantics
