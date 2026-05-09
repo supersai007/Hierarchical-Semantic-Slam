@@ -8,7 +8,7 @@ scp -r "lab_walk_final" netid@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/ne
 
 ## Step2: Create new env 
 
-To run the script (integrate_labwalk_to_hydra\pretrained\pre_trained_oneformer_on_labwalk.py), we need ROS. So I am creating new venv in the cluster to install ros-humble-desktop (ros2 jazzy not available in cluster)
+The script (pre_trained_oneformer_on_labwalk.py) requires ROS. So I am creating new venv in the cluster to install ros-humble-desktop (ros2 jazzy not available in cluster)
 
 ```
 module load miniconda/3
@@ -44,6 +44,14 @@ sbatch run_semantics.slurm
 ### check job status
 squeue -u netid
 ```
+
+If job fails because of YAML error, it is because metadata.yaml Jazzy version is not handled by Humble. In that case, take a backup of metadata.yaml and re-index the bag file.
+```
+ros2 bag reindex <path_to_bag_folder>
+```
+
+Then the re run the job again.
+
 ## Step5: Once job is done verify all topics in new bag and move created bag file back to wsl from cluster
 
 ### bag info should include /semantic/ topic. Check if the message counts matches with /D435/color/image_raw
