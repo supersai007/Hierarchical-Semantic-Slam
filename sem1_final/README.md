@@ -65,7 +65,7 @@ colcon build --packages-select odom_to_tf
 source install/setup.bash
 ```
 
-# Final setup:
+# Running Hydra
 
 Terminal 1:
 ```
