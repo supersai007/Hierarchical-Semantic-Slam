@@ -36,7 +36,34 @@ Service:           0
 Service information:
 ```
 
+# odom_to_tf package setup
 
+1. Create package
+```
+cd ~/hydra_ws/src
+ros2 pkg create odom_to_tf --build-type ament_python --dependencies rclpy nav_msgs tf2_ros geometry_msgs
+```
+2. Replace structure
+```
+odom_to_tf/
+  odom_to_tf/
+    __init__.py
+    odom_to_tf_node.py 
+```
+3. Edit setup.py
+```
+entry_points={
+    'console_scripts': [
+        'odom_to_tf_node = odom_to_tf.odom_to_tf_node:main',
+    ],
+},
+```
+4. Build
+```
+cd ~/hydra_ws
+colcon build --packages-select odom_to_tf
+source install/setup.bash
+```
 
 # Final setup:
 
