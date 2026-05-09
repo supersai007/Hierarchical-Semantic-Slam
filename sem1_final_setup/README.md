@@ -1,4 +1,55 @@
-I used these files to get teh mesh from semantics of d4355 cam images.
+# Overview:
+
+I am using the semantics from D435 cam only and avoided the D455 topics, to check if the integration pipeline works. 
+The final TF map looks like:
+
+<img width="1341" height="442" alt="Screenshot 2026-05-08 063413" src="https://github.com/user-attachments/assets/8ca4cf8d-b06b-4d72-a4b1-a47223286b1b" />
+
+Final demo:
+
+https://github.com/user-attachments/assets/671836cb-34ce-4677-bc63-1648b7926e77
+
+# Step 1: Install Hydra
+
+https://github.com/MIT-SPARK/Hydra-ROS#installation
+
+
+# Step 2: odom_to_tf package setup
+
+
+This is a a ROS2 node that converts /kiss/odometry → TF (odom → livox_frame) so Hydra can consume it.
+
+
+1. Create package
+```
+cd ~/hydra_ws/src
+ros2 pkg create odom_to_tf --build-type ament_python --dependencies rclpy nav_msgs tf2_ros geometry_msgs
+```
+2. Replace structure
+```
+odom_to_tf/
+  odom_to_tf/
+    __init__.py
+    odom_to_tf_node.py 
+```
+3. Edit setup.py
+```
+entry_points={
+    'console_scripts': [
+        'odom_to_tf_node = odom_to_tf.odom_to_tf_node:main',
+    ],
+},
+```
+4. Build
+```
+cd ~/hydra_ws
+colcon build --packages-select odom_to_tf
+source install/setup.bash
+```
+
+# Step 2: create launch file for custom dataset:
+
+
 
 # file locations:
 ```
@@ -35,36 +86,6 @@ Topic information: Topic: /D435/accel/sample | Type: sensor_msgs/msg/Imu | Count
 Service:           0
 Service information:
 ```
-
-# odom_to_tf package setup
-
-1. Create package
-```
-cd ~/hydra_ws/src
-ros2 pkg create odom_to_tf --build-type ament_python --dependencies rclpy nav_msgs tf2_ros geometry_msgs
-```
-2. Replace structure
-```
-odom_to_tf/
-  odom_to_tf/
-    __init__.py
-    odom_to_tf_node.py 
-```
-3. Edit setup.py
-```
-entry_points={
-    'console_scripts': [
-        'odom_to_tf_node = odom_to_tf.odom_to_tf_node:main',
-    ],
-},
-```
-4. Build
-```
-cd ~/hydra_ws
-colcon build --packages-select odom_to_tf
-source install/setup.bash
-```
-
 # Running Hydra
 
 Terminal 1:
