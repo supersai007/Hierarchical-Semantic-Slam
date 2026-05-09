@@ -1,14 +1,14 @@
 I used these files to get teh mesh from semantics of d4355 cam images.
 
-# location of files:
+# file locations:
+```
+hydra_ws/src/hydra_ros/hydra_ros/launch/datasets/my_dataset.launch.yaml
 
-launch: hydra_ws/src/hydra_ros/hydra_ros/launch/datasets/my_dataset.launch.yaml
+hydra_ws/src/hydra_ros/hydra_ros/config/my_dataset.config.yaml
 
-config: hydra_ws/src/hydra_ros/hydra_ros/config/my_dataset.config.yaml
-
-odom_to_tf: hydra_ws/src/odom_to_tf/odom_to_tf/odom_to_tf.py
-
-dataset info:
+hydra_ws/src/odom_to_tf/odom_to_tf/odom_to_tf.py
+```
+# dataset info
 ```
 Files:             lab_walk_7526_wsemantics_0.db3
 Bag size:          13.9 GiB
@@ -49,7 +49,8 @@ source /opt/ros/jazzy/setup.bash
 ros2 bag play ~/bags/lab_walk_7526_wsemantics  --clock   --qos-profile-overrides-path ~/.tf_overrides.yaml   --read-ahead-queue-size 20000 -l
 ```
 
-Wait until /clock starts publishing values.
+Wait until bag starts publishing values before running icp and Hydra file.
+
 
 Terminal 2:
 ```
