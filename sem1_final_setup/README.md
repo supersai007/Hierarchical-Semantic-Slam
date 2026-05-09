@@ -1,14 +1,3 @@
-# Overview:
-
-I am using the semantics from D435 cam only and avoided the D455 topics, to check if the integration pipeline works. 
-The final TF map looks like:
-
-<img width="1341" height="442" alt="Screenshot 2026-05-08 063413" src="https://github.com/user-attachments/assets/8ca4cf8d-b06b-4d72-a4b1-a47223286b1b" />
-
-Final demo:
-
-https://github.com/user-attachments/assets/671836cb-34ce-4677-bc63-1648b7926e77
-
 # Step 1: Install Hydra
 
 https://github.com/MIT-SPARK/Hydra-ROS#installation
@@ -115,6 +104,21 @@ Terminal 3:
 ```
 ros2 bag play ~/bags/lab_walk_7526_wsemantics  --clock   --qos-profile-overrides-path ~/.tf_overrides.yaml   --read-ahead-queue-size 20000 -l
 ```
+
+# Overview:
+
+I am using the semantics from D435 cam only and avoided the D455 topics, to check if the integration pipeline works. 
+The final TF map looks like:
+
+<img width="1341" height="442" alt="Screenshot 2026-05-08 063413" src="https://github.com/user-attachments/assets/8ca4cf8d-b06b-4d72-a4b1-a47223286b1b" />
+
+
+Final demo:
+
+
+https://github.com/user-attachments/assets/671836cb-34ce-4677-bc63-1648b7926e77
+
+
 
 
 
