@@ -1,4 +1,12 @@
-Added semantics to images from d435 cam to the original dataset. 
+I used these files to get teh mesh from semantics of d4355 cam images.
+
+# location of files:
+
+launch: hydra_ws/src/hydra_ros/hydra_ros/launch/datasets/my_dataset.launch.yaml
+
+config: hydra_ws/src/hydra_ros/hydra_ros/config/my_dataset.config.yaml
+
+odom_to_tf: hydra_ws/src/odom_to_tf/odom_to_tf/odom_to_tf.py
 
 dataset info:
 ```
