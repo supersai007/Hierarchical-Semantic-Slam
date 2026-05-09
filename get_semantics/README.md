@@ -43,35 +43,31 @@ squeue -u admanoharan
 
 ## Step5: Once job is done verify all topics in new bag and move created bag file back to wsl from cluster
 
-### bag info should include seg_cam topic. Check if the message counts matches with /D435/color/image_raw
+### bag info should include /semantic/ topic. Check if the message counts matches with /D435/color/image_raw
 
 ```
-$ ros2 bag info lab_walk_completed/
-
-Files:             lab_walk_seg_0.db3
-Bag size:          7.3 GiB
+Files:             lab_walk_7526_wsemantics_0.db3
+Bag size:          13.9 GiB
 Storage id:        sqlite3
 ROS Distro:        unknown
-Duration:          81.875257531s
-Start:             Apr 16 1970 02:41:24.439117376 (9099684.439117376)
-End:               Apr 16 1970 02:42:46.314374907 (9099766.314374907)
-Messages:          16354
-Topic information: Topic: /D435/aligned_depth_to_color/camera_info | Type: sensor_msgs/msg/CameraInfo | Count: 351 | Serialization Format: cdr
-                   Topic: /D435/aligned_depth_to_color/image_raw | Type: sensor_msgs/msg/Image | Count: 351 | Serialization Format: cdr
-                   Topic: /D435/color/camera_info | Type: sensor_msgs/msg/CameraInfo | Count: 533 | Serialization Format: cdr
-                   Topic: /D435/color/image_raw | Type: sensor_msgs/msg/Image | Count: 531 | Serialization Format: cdr
-                   Topic: /D435/depth_registered/points | Type: sensor_msgs/msg/PointCloud2 | Count: 351 | Serialization Format: cdr
-                   Topic: /D435/seg_cam/rgb/image_raw | Type: sensor_msgs/msg/Image | Count: 531 | Serialization Format: cdr
-                   Topic: /D455/color/camera_info | Type: sensor_msgs/msg/CameraInfo | Count: 445 | Serialization Format: cdr
-                   Topic: /D455/color/image_raw | Type: sensor_msgs/msg/Image | Count: 445 | Serialization Format: cdr
-                   Topic: /D455/depth/camera_info | Type: sensor_msgs/msg/CameraInfo | Count: 424 | Serialization Format: cdr
-                   Topic: /D455/depth/color/points | Type: sensor_msgs/msg/PointCloud2 | Count: 421 | Serialization Format: cdr
-                   Topic: /D455/depth/image_rect_raw | Type: sensor_msgs/msg/Image | Count: 424 | Serialization Format: cdr
-                   Topic: /kiss/odometry | Type: nav_msgs/msg/Odometry | Count: 451 | Serialization Format: cdr
-                   Topic: /livox/imu | Type: sensor_msgs/msg/Imu | Count: 9229 | Serialization Format: cdr
-                   Topic: /livox/lidar | Type: sensor_msgs/msg/PointCloud2 | Count: 461 | Serialization Format: cdr
-                   Topic: /tf | Type: tf2_msgs/msg/TFMessage | Count: 1400 | Serialization Format: cdr
-                   Topic: /tf_static | Type: tf2_msgs/msg/TFMessage | Count: 6 | Serialization Format: cdr
+Duration:          111.075027584s
+Start:             Feb 17 1970 22:02:52.393971168 (4158172.393971168)
+End:               Feb 17 1970 22:04:43.468998752 (4158283.468998752)
+Messages:          71328
+Topic information: Topic: /D435/accel/sample | Type: sensor_msgs/msg/Imu | Count: 10948 | Serialization Format: cdr
+                   Topic: /D435/aligned_depth_to_color/camera_info | Type: sensor_msgs/msg/CameraInfo | Count: 608 | Serialization Format: cdr
+                   Topic: /D435/aligned_depth_to_color/image_raw | Type: sensor_msgs/msg/Image | Count: 608 | Serialization Format: cdr
+                   Topic: /D435/color/camera_info | Type: sensor_msgs/msg/CameraInfo | Count: 3030 | Serialization Format: cdr
+                   Topic: /D435/color/image_raw | Type: sensor_msgs/msg/Image | Count: 3030 | Serialization Format: cdr
+                   Topic: /D435/gyro/sample | Type: sensor_msgs/msg/Imu | Count: 21743 | Serialization Format: cdr
+                   Topic: /D435/semantic/image_raw | Type: sensor_msgs/msg/Image | Count: 3030 | Serialization Format: cdr
+                   Topic: /D455/aligned_depth_to_color/camera_info | Type: sensor_msgs/msg/CameraInfo | Count: 975 | Serialization Format: cdr
+                   Topic: /D455/aligned_depth_to_color/image_raw | Type: sensor_msgs/msg/Image | Count: 975 | Serialization Format: cdr
+                   Topic: /D455/color/camera_info | Type: sensor_msgs/msg/CameraInfo | Count: 1522 | Serialization Format: cdr
+                   Topic: /D455/color/image_raw | Type: sensor_msgs/msg/Image | Count: 1531 | Serialization Format: cdr
+                   Topic: /livox/imu | Type: sensor_msgs/msg/Imu | Count: 22215 | Serialization Format: cdr
+                   Topic: /livox/lidar | Type: sensor_msgs/msg/PointCloud2 | Count: 1110 | Serialization Format: cdr
+                   Topic: /tf_static | Type: tf2_msgs/msg/TFMessage | Count: 3 | Serialization Format: cdr
 Service:           0
 Service information:
 ```
