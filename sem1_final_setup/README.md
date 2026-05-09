@@ -36,11 +36,13 @@ colcon build --packages-select odom_to_tf
 source install/setup.bash
 ```
 
-# Step 2: create launch file for custom dataset:
+# Step 2: create launch file and config files to integrate custom dataset:
 
 
+Add the files in below locations and rebuild hydra-ros
 
-# file locations:
+
+## file locations:
 ```
 hydra_ws/src/hydra_ros/hydra_ros/launch/datasets/my_dataset.launch.yaml
 
@@ -48,6 +50,44 @@ hydra_ws/src/hydra_ros/hydra_ros/config/my_dataset.config.yaml
 
 hydra_ws/src/odom_to_tf/odom_to_tf/odom_to_tf.py
 ```
+
+# Step 3: Build hydra-ros
+```
+cd ~/hydra_ws
+colcon build --packages-select hydra_ros --symlink-install
+source ~/hydra_ws/install/setup.bash
+```
+
+# Step 4: Run Hydra
+
+Terminal 1:
+```
+source ~/rosbags_env/bin/activate
+
+source /opt/ros/jazzy/setup.bash
+
+ros2 bag play ~/bags/lab_walk_7526_wsemantics  --clock   --qos-profile-overrides-path ~/.tf_overrides.yaml   --read-ahead-queue-size 20000 -l
+```
+
+
+Instead of merging odom topic to the bag, I run the kiss-icp parallely.
+Before running icp and Hydra file wait until bag starts publishing values.
+
+
+Terminal 2:
+```
+ros2 launch kiss_icp odometry.launch.py \
+topic:=/livox/lidar \
+base_frame:=livox_frame \
+publish_odom_tf:=false \
+use_sim_time:=true 
+```
+
+Terminal 3:
+```
+ros2 bag play ~/bags/lab_walk_7526_wsemantics  --clock   --qos-profile-overrides-path ~/.tf_overrides.yaml   --read-ahead-queue-size 20000 -l
+```
+
 # dataset info
 ```
 Files:             lab_walk_7526_wsemantics_0.db3
@@ -74,35 +114,6 @@ Topic information: Topic: /D435/accel/sample | Type: sensor_msgs/msg/Imu | Count
                    Topic: /tf_static | Type: tf2_msgs/msg/TFMessage | Count: 3 | Serialization Format: cdr
 Service:           0
 Service information:
-```
-# Running Hydra
-
-Terminal 1:
-```
-source ~/rosbags_env/bin/activate
-
-source /opt/ros/jazzy/setup.bash
-
-ros2 bag play ~/bags/lab_walk_7526_wsemantics  --clock   --qos-profile-overrides-path ~/.tf_overrides.yaml   --read-ahead-queue-size 20000 -l
-```
-
-
-Instead of merging odom topic to the bag, I run the kiss-icp parallely.
-Wait until bag starts publishing values before running icp and Hydra file.
-
-
-Terminal 2:
-```
-ros2 launch kiss_icp odometry.launch.py \
-topic:=/livox/lidar \
-base_frame:=livox_frame \
-publish_odom_tf:=false \
-use_sim_time:=true 
-```
-
-Terminal 3:
-```
-ros2 bag play ~/bags/lab_walk_7526_wsemantics  --clock   --qos-profile-overrides-path ~/.tf_overrides.yaml   --read-ahead-queue-size 20000 -l
 ```
 
 # Overview:
