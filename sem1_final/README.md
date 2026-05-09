@@ -36,9 +36,9 @@ Service:           0
 Service information:
 ```
 
-Instead of merging odom topic to the bag, I run the kiss-icp parallely.
 
-Final setup:
+
+# Final setup:
 
 Terminal 1:
 ```
@@ -49,6 +49,8 @@ source /opt/ros/jazzy/setup.bash
 ros2 bag play ~/bags/lab_walk_7526_wsemantics  --clock   --qos-profile-overrides-path ~/.tf_overrides.yaml   --read-ahead-queue-size 20000 -l
 ```
 
+
+Instead of merging odom topic to the bag, I run the kiss-icp parallely.
 Wait until bag starts publishing values before running icp and Hydra file.
 
 
