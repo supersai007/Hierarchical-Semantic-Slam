@@ -4,6 +4,10 @@ uhumans2_office dataset: [https://drive.google.com/file/d/1Aqai_bhiL5viFu_wEMqUR
 
 lab dataset: https://drive.google.com/file/d/1tzW6thTRXQ0bI0ww_szm42AGpsbLk6Ay/view?usp=sharing 
 
+lab dataset with d435 semantics: https://drive.google.com/drive/folders/1cVhyTfSwNS9K3XPlIv7vX096oGBpYikr?usp=sharing
+
+lab dataset with d455 semantics: 
+
 Running hydra
 
 Terminal 1 — Launch Hydra
