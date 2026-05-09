@@ -4,7 +4,7 @@ I have already created the odometry topic, so only semantics is pending now. I a
 
 ## Step1: Send lab_walk_final bag folder to the cluster env.
 
-scp -r "lab_walk_final" admanoharan@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/admanoharan/semantics/dataset/lab_walk/
+scp -r "lab_walk_final" <netid>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/<netid>/semantics/dataset/lab_walk/
 
 ## Step2: Create new env to install ros2-humble to run "run_semantics_on_labwalk.sh"
 
@@ -19,9 +19,9 @@ conda config --add channels robostack-humble
 conda config --set channel_priority strict
 
 # Create the environment without forcing a Python version
-conda create --prefix /lustre/nvwulf/home/admanoharan/envs/ros2_humble_env ros-humble-desktop -y
+conda create --prefix /lustre/nvwulf/home/<netid>/envs/ros2_humble_env ros-humble-desktop -y
 
-conda activate /lustre/nvwulf/home/admanoharan/envs/ros2_humble_env
+conda activate /lustre/nvwulf/home/<netid>/envs/ros2_humble_env
 
 pip install transformers torch torchvision pandas pillow
 
@@ -31,16 +31,15 @@ python -c "import rclpy; print('ROS 2 is ready!')"
 ## Step3: Create pre_trained_oneformer_on_labwalk.py and run_semantics_on_labwalk.sh and run the job in the env
 
 Create the slurm job to run the segmentation in the GPU.
-
-More details in:
-integrate_labwalk_to_hydra\pretrained\run_semantics_on_labwalk.sh
-
+```
 cd ~/semantics
+
+# run job
 sbatch run_semantics.slurm
 
 ### check job status
-squeue -u admanoharan
-
+squeue -u <netid>
+```
 ## Step5: Once job is done verify all topics in new bag and move created bag file back to wsl from cluster
 
 ### bag info should include /semantic/ topic. Check if the message counts matches with /D435/color/image_raw
@@ -73,7 +72,7 @@ Service information:
 ```
 
 ### command to send folder back to local
-scp -r admanoharan@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/admanoharan/semantics/dataset/lab_walk_seg/ bags/lab_walk_completed
+scp -r <netid>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/<netid>/semantics/dataset/lab_walk_seg/ bags/lab_walk_completed
 
 ## Step5: Create new config file
 
