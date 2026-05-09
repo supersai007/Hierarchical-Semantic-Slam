@@ -1,0 +1,60 @@
+launch:
+  - arg: {name: labelspace, default: ade20k_full}
+  - arg: {name: log_prefix, default: lab_walk}
+
+  - set_remap:
+      from: hydra/input/d435/rgb/image_raw
+      to: /D435/color/image_raw
+  - set_remap:
+      from: hydra/input/d435/rgb/camera_info
+      to: /D435/color/camera_info
+  - set_remap:
+      from: hydra/input/d435/depth_registered/image_rect
+      to: /D435/aligned_depth_to_color/image_raw
+  - set_remap:
+      from: hydra/input/d435/semantic/image_raw
+      to: /D435/semantic/image_raw
+
+  - node:
+      pkg: hydra_ros
+      exec: hydra_ros_node
+      name: hydra
+      ros_args: --ros-args -p use_sim_time:=true
+      args: >
+        --config-utilities-yaml
+          {map_frame: map,
+           odom_frame: odom_lidar,
+           robot_frame: livox_frame,
+           sensor_frame: D435_color_optical_frame}
+        --config-utilities-file
+          $(find-pkg-share hydra_ros)/config/my_dataset_config.yaml
+        --config-utilities-file
+          $(find-pkg-share hydra)/config/label_spaces/$(var labelspace)_label_space.yaml
+        --config-utilities-yaml
+          {log_path: $(env HOME)/.hydra/$(var log_prefix)}
+
+  - node:
+      pkg: tf2_ros
+      name: odom_to_map
+      exec: static_transform_publisher
+      ros_args: --ros-args -p use_sim_time:=true
+      args: >
+        --x 0.0 --y 0.0 --z 0.0
+        --roll 0.0 --pitch 0.0 --yaw 0.0
+        --frame-id odom_lidar
+        --child-frame-id map
+
+  # --- ODOM → TF ---
+  - node:
+      pkg: odom_to_tf
+      exec: odom_to_tf_node
+      name: odom_to_tf
+      output: screen
+      ros_args: --ros-args
+        -p odom_topic:=/kiss/odometry
+        -p odom_frame:=odom_lidar
+        -p base_frame:=livox_frame
+
+  - set_remap: {from: hydra_visualizer/dsg, to: hydra/backend/dsg}
+  - include:
+      file: $(find-pkg-share hydra_visualizer)/launch/streaming_visualizer.launch.yaml
