@@ -1,0 +1,104 @@
+rosbag2_bagfile_information:
+  version: 5
+  storage_identifier: sqlite3
+  duration:
+    nanoseconds: 111075027584
+  starting_time:
+    nanoseconds_since_epoch: 4158172393971168
+  message_count: 71328
+  topics_with_message_count:
+    - topic_metadata:
+        name: /D435/accel/sample
+        type: sensor_msgs/msg/Imu
+        serialization_format: cdr
+        offered_qos_profiles: "[]"
+      message_count: 10948
+    - topic_metadata:
+        name: /D455/aligned_depth_to_color/image_raw
+        type: sensor_msgs/msg/Image
+        serialization_format: cdr
+        offered_qos_profiles: "[]"
+      message_count: 975
+    - topic_metadata:
+        name: /D435/semantic/image_raw
+        type: sensor_msgs/msg/Image
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 3030
+    - topic_metadata:
+        name: /D435/aligned_depth_to_color/image_raw
+        type: sensor_msgs/msg/Image
+        serialization_format: cdr
+        offered_qos_profiles: "[]"
+      message_count: 608
+    - topic_metadata:
+        name: /D435/color/camera_info
+        type: sensor_msgs/msg/CameraInfo
+        serialization_format: cdr
+        offered_qos_profiles: "[]"
+      message_count: 3030
+    - topic_metadata:
+        name: /D455/aligned_depth_to_color/camera_info
+        type: sensor_msgs/msg/CameraInfo
+        serialization_format: cdr
+        offered_qos_profiles: "[]"
+      message_count: 975
+    - topic_metadata:
+        name: /D435/aligned_depth_to_color/camera_info
+        type: sensor_msgs/msg/CameraInfo
+        serialization_format: cdr
+        offered_qos_profiles: "[]"
+      message_count: 608
+    - topic_metadata:
+        name: /D435/gyro/sample
+        type: sensor_msgs/msg/Imu
+        serialization_format: cdr
+        offered_qos_profiles: "[]"
+      message_count: 21743
+    - topic_metadata:
+        name: /D455/color/camera_info
+        type: sensor_msgs/msg/CameraInfo
+        serialization_format: cdr
+        offered_qos_profiles: "[]"
+      message_count: 1522
+    - topic_metadata:
+        name: /livox/imu
+        type: sensor_msgs/msg/Imu
+        serialization_format: cdr
+        offered_qos_profiles: "[]"
+      message_count: 22215
+    - topic_metadata:
+        name: /D435/color/image_raw
+        type: sensor_msgs/msg/Image
+        serialization_format: cdr
+        offered_qos_profiles: "[]"
+      message_count: 3030
+    - topic_metadata:
+        name: /D455/color/image_raw
+        type: sensor_msgs/msg/Image
+        serialization_format: cdr
+        offered_qos_profiles: "[]"
+      message_count: 1531
+    - topic_metadata:
+        name: /livox/lidar
+        type: sensor_msgs/msg/PointCloud2
+        serialization_format: cdr
+        offered_qos_profiles: "[]"
+      message_count: 1110
+    - topic_metadata:
+        name: /tf_static
+        type: tf2_msgs/msg/TFMessage
+        serialization_format: cdr
+        offered_qos_profiles: "- avoid_ros_namespace_conventions: false\n  deadline:\n    nsec: 4294967295\n    sec: 2147483647\n  depth: 0\n  durability: transient_local\n  history: unknown\n  lifespan:\n    nsec: 4294967295\n    sec: 2147483647\n  liveliness: automatic\n  liveliness_lease_duration:\n    nsec: 4294967295\n    sec: 2147483647\n  reliability: reliable"
+      message_count: 3
+  compression_format: ""
+  compression_mode: ""
+  relative_file_paths:
+    - lab_walk_7526_wsemantics_0.db3
+  files:
+    - path: lab_walk_7526_wsemantics_0.db3
+      starting_time:
+        nanoseconds_since_epoch: 4158172393971168
+      duration:
+        nanoseconds: 111075027584
+      message_count: 71328
