@@ -10,7 +10,23 @@ scp -r "lab_walk_final" admanoharan@login.nvwulf.stonybrook.edu:/lustre/nvwulf/h
 
 To run the script (integrate_labwalk_to_hydra\pretrained\pre_trained_oneformer_on_labwalk.py), we need ROS. So I am creating new venv in the cluster to install ros-humble-desktop (ros2 jazzy not available in cluster)
 
+```
+module load miniconda/3
+
+# Ensure channels are correct and in order
+conda config --add channels conda-forge
+conda config --add channels robostack-humble
+conda config --set channel_priority strict
+
+# Create the environment without forcing a Python version
+conda create --prefix /lustre/nvwulf/home/admanoharan/envs/ros2_humble_env ros-humble-desktop -y
+
 conda activate /lustre/nvwulf/home/admanoharan/envs/ros2_humble_env
+
+pip install transformers torch torchvision pandas pillow
+
+python -c "import rclpy; print('ROS 2 is ready!')"
+```
 
 ## Step3: Create pre_trained_oneformer_on_labwalk.py and run_semantics_on_labwalk.sh and run the job in the env
 
