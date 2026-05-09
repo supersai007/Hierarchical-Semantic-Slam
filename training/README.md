@@ -2,8 +2,6 @@
 
 drive link = https://drive.google.com/drive/folders/1X1t48VxJQLnXUQHUv0Yo4SCUoMJmUhGu?usp=sharing 
 
-model weights = https://drive.google.com/drive/folders/1zigDFjj9zQt5LS9SSOl8BiHbAy7I8K8Q?usp=sharing
-
 rgb_dir=f"{drive_path}/tesse_left_cam_rgb_image_raw"
 seg_dir=f"{drive_path}/tesse_seg_cam_converted_image_raw"
 
@@ -48,3 +46,4 @@ After training:
 
 <img width="1569" height="510" alt="image" src="https://github.com/user-attachments/assets/28d3d9c1-a83d-4016-8479-e6d93c1fc75a" />
 
+trained model weights = https://drive.google.com/drive/folders/1zigDFjj9zQt5LS9SSOl8BiHbAy7I8K8Q?usp=sharing
