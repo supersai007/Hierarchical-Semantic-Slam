@@ -2,11 +2,11 @@
 
 I have already created the odometry topic, so only semantics is pending now. I am using oneformer model pretrained on ade20k dataset. On CPU it might take 6-8 hrs to get the semantics, so I am doing this on NVWulf cluster.
 
-## Step1: Send lab_walk_final bag folder to the cluster env.
+## Step1: Send bag folder to the cluster
 
 scp -r "lab_walk_final" <netid>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/<netid>/semantics/dataset/lab_walk/
 
-## Step2: Create new env to install ros2-humble to run "run_semantics_on_labwalk.sh"
+## Step2: Create new env 
 
 To run the script (integrate_labwalk_to_hydra\pretrained\pre_trained_oneformer_on_labwalk.py), we need ROS. So I am creating new venv in the cluster to install ros-humble-desktop (ros2 jazzy not available in cluster)
 
@@ -28,11 +28,19 @@ pip install transformers torch torchvision pandas pillow
 python -c "import rclpy; print('ROS 2 is ready!')"
 ```
 
-## Step3: Create pre_trained_oneformer_on_labwalk.py and run_semantics_on_labwalk.sh and run the job in the env
+## Step3: Create scripts to get semantics and run job
+
+Create files pre_trained_oneformer_on_labwalk.py and run_semantics_on_labwalk.sh 
 
 Create the slurm job to run the segmentation in the GPU.
 ```
 cd ~/semantics
+
+# opens bag file, subscribes to cam topic and writes semantics topic + original bag in a new bag file 
+nano pre_trained_oneformer_on_labwalk.py
+
+# slurm job to run the pre_trained_oneformer_on_labwalk.py on GPU
+nano run_semantics_on_labwalk.sh 
 
 # run job
 sbatch run_semantics.slurm
