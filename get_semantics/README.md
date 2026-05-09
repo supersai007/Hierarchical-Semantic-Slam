@@ -4,7 +4,7 @@ I have already created the odometry topic, so only semantics is pending now. I a
 
 ## Step1: Send bag folder to the cluster
 
-scp -r "lab_walk_final" <netid>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/<netid>/semantics/dataset/lab_walk/
+scp -r "lab_walk_final" netid@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/netid/semantics/dataset/lab_walk/
 
 ## Step2: Create new env 
 
@@ -19,9 +19,9 @@ conda config --add channels robostack-humble
 conda config --set channel_priority strict
 
 # Create the environment without forcing a Python version
-conda create --prefix /lustre/nvwulf/home/<netid>/envs/ros2_humble_env ros-humble-desktop -y
+conda create --prefix /lustre/nvwulf/home/netid/envs/ros2_humble_env ros-humble-desktop -y
 
-conda activate /lustre/nvwulf/home/<netid>/envs/ros2_humble_env
+conda activate /lustre/nvwulf/home/netid/envs/ros2_humble_env
 
 pip install transformers torch torchvision pandas pillow
 
@@ -42,7 +42,7 @@ nano run_semantics_on_labwalk.sh
 sbatch run_semantics.slurm
 
 ### check job status
-squeue -u <netid>
+squeue -u netid
 ```
 ## Step5: Once job is done verify all topics in new bag and move created bag file back to wsl from cluster
 
