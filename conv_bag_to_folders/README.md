@@ -1,6 +1,6 @@
 Semantic Segmentation of images from the rosbag
 
-<h1>Script1: Convert rosbag to folders containing images</h1>
+## Script1: Convert rosbag to folders containing images
 
 1. One folder for each topic
 2. Each folder contains a metedata.csv to store metadata for reconstruction
@@ -14,5 +14,3 @@ metdata.csv looks like:
 
 <img width="655" height="433" alt="metadata_csv" src="https://github.com/user-attachments/assets/8465c0a3-db30-4911-b938-dc98fa48c1ee" />
 
-
-<h1>Script2: Convert the folders back to bag file</h1>
