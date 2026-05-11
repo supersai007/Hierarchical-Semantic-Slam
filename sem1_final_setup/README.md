@@ -2,8 +2,14 @@
 
 https://github.com/MIT-SPARK/Hydra-ROS#installation
 
+# Step 2: Install KISS-ICP
 
-# Step 2: odom_to_tf package setup
+```
+pip install kiss-icp
+cd ~/hydra_ws/src/ && git clone https://github.com/PRBonn/kiss-icp && cd ~/hydra_ws/ && colcon build --packages-select kiss_icp
+```
+
+# Step 3: odom_to_tf package setup
 
 
 This is a a ROS2 node that converts /kiss/odometry → TF (odom → livox_frame) so Hydra can consume it.
@@ -36,7 +42,7 @@ colcon build --packages-select odom_to_tf
 source install/setup.bash
 ```
 
-# Step 2: create launch file and config files to integrate custom dataset:
+# Step 4: create launch file and config files to integrate custom dataset:
 
 
 Add the files in below locations and rebuild hydra-ros
@@ -51,14 +57,14 @@ hydra_ws/src/hydra_ros/hydra_ros/config/my_dataset.config.yaml
 hydra_ws/src/odom_to_tf/odom_to_tf/odom_to_tf.py
 ```
 
-# Step 3: Build hydra-ros
+# Step 5: Build hydra-ros
 ```
 cd ~/hydra_ws
 colcon build --packages-select hydra_ros --symlink-install
 source ~/hydra_ws/install/setup.bash
 ```
 
-# Step 4: Run Hydra
+# Step 6: Run Hydra
 
 Terminal 1:
 ```
