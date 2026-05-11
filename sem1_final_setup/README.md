@@ -91,7 +91,8 @@ use_sim_time:=true
 
 Terminal 3:
 ```
-ros2 bag play ~/bags/lab_walk_7526_wsemantics  --clock   --qos-profile-overrides-path ~/.tf_overrides.yaml   --read-ahead-queue-size 20000 -l
+source ~/hydra_ws/install/setup.bash
+ros2 launch hydra_ros my_dataset.launch.yaml
 ```
 
 # dataset info
