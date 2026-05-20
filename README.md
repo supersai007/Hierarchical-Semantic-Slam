@@ -24,6 +24,7 @@ Odometry
 Generated using:
 
 [KISS-ICP](https://github.com/prbonn/kiss-icp)
+[Steps to create odom](https://github.com/supersai007/Hierarchical-Semantic-Slam/tree/main/create_odom_topic)
 
 ## ROS Topics Used
 
@@ -50,10 +51,11 @@ Generated using:
 ```
 
 ## Final TF Structure
+```
 odom_lidar
    └── livox_frame
            └── D435_color_optical_frame
-
+```
 Hydra configuration:
 1. odom_frame = odom_lidar
 2. robot_frame = livox_frame
@@ -85,7 +87,7 @@ Features:
 ## Semantic Segmentation Work
 #### Models Evaluated
 1. EfficientViT
-Hydra default segmentation model. Tried to implement the model by setting colab as server.
+Hydra default segmentation model. Tried to implement the model by setting colab as server.(https://github.com/supersai007/Hierarchical-Semantic-Slam/tree/main/colab_setup_files)
 2. OneFormer (shi-labs/oneformer_ade20k_swin_large)
 3. SegFormer (nvidia/segformer-b5-finetuned-ade-640-640)
 4. Mask2Former (facebook/mask2former-swin-large-ade-semantic)
