@@ -1,4 +1,104 @@
-# Hierarchical-Semantic-Slam
+# Hierarchical Semantic SLAM using Hydra on Custom Lab Dataset
+
+## Overview
+This repository contains my work on integrating a custom RGB-D + LiDAR lab dataset into the [MIT-SPARK Hydra-ROS framework](https://github.com/MIT-SPARK/Hydra-ROS?utm_source=chatgpt.com) for hierarchical semantic SLAM and semantic 3D reconstruction.
+
+The project involved:
+
+1. Understanding Hydra’s internal architecture and dataset requirements
+2. Generating odometry from LiDAR using KISS-ICP
+3. Integrating semantic segmentation pipelines
+4. Reconstructing TF trees for ROS2 compatibility
+5. Running Hydra on a completely custom dataset instead of the default uHumans2 dataset
+6. Training and evaluating semantic segmentation models
+
+## System Architecture
+Sensor Setup
+RGB-D Cameras
+Intel RealSense D435
+Intel RealSense D455
+LiDAR
+Livox LiDAR
+Odometry
+
+Generated using:
+
+[KISS-ICP](https://github.com/prbonn/kiss-icp)
+
+## ROS Topics Used
+
+#### RGB / Depth
+```sh
+/D435/color/image_raw
+/D435/color/camera_info
+/D435/aligned_depth_to_color/image_raw
+/D435/aligned_depth_to_color/camera_info
+```
+#### Semantic Segmentation
+```sh
+/D435/semantic/image_raw
+```
+#### LiDAR + Odometry
+```sh
+/livox/lidar
+/kiss/odometry
+```
+#### TF
+```sh
+/tf
+/tf_static
+```
+
+## Final TF Structure
+odom_lidar
+   └── livox_frame
+           └── D435_color_optical_frame
+
+Hydra configuration:
+1. odom_frame = odom_lidar
+2. robot_frame = livox_frame
+3. sensor_frame = D435_color_optical_frame
+
+## Hydra Integration
+
+#### Custom Launch File
+```sh
+hydra_ros/launch/datasets/my_dataset.launch.yaml
+```
+Features:
+1. Topic remapping
+2. TF publishing
+3. Odometry integration
+4. Semantic topic integration
+5. Hydra visualizer support
+
+#### Custom Dataset Config
+```sh
+hydra_ros/config/my_dataset_config.yaml
+```
+Features:
+1. Live camera intrinsic reading from camera_info
+2. Extrinsics read dynamically from TF
+3. TSDF + semantic integration tuning
+4. PGMO backend configuration
+
+## Semantic Segmentation Work
+#### Models Evaluated
+1. EfficientViT
+Hydra default segmentation model. Tried to implement the model by setting colab as server.
+2. OneFormer (shi-labs/oneformer_ade20k_swin_large)
+3. SegFormer (nvidia/segformer-b5-finetuned-ade-640-640)
+4. Mask2Former (facebook/mask2former-swin-large-ade-semantic)
+
+#### OneFormer Training
+Training pipeline on uHumans GT labels
+Fine-tuning pipeline for scene parsing datasets
+
+#### Open-Set vs Closed-Set Segmentation
+
+## GPU / Cluster Work
+
+## Dataset info
 
 uhumans2_office dataset: [https://drive.google.com/file/d/1Aqai_bhiL5viFu_wEMqURN2hPSW5-MkD/view?usp=sharing ](https://drive.google.com/file/d/1S4SiKUMylpYF9KxNLKE9AcwWhtFi2Zp6/view?usp=sharing)
 
@@ -84,7 +184,7 @@ Topic information: Topic: /D435/accel/sample | Type: sensor_msgs/msg/Imu | Count
 Service:           0
 Service information:
 ```
-Running hydra
+## Running hydra
 
 Terminal 1 — Launch Hydra
 ```
