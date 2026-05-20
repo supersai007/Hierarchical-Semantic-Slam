@@ -30,10 +30,7 @@ LiDAR
 Livox LiDAR
 Odometry
 
-Generated using:
-
-[KISS-ICP](https://github.com/prbonn/kiss-icp)
-[Steps to create odom](https://github.com/supersai007/Hierarchical-Semantic-Slam/tree/main/create_odom_topic)
+Generated using: [KISS-ICP](https://github.com/prbonn/kiss-icp)
 
 ## ROS Topics Used
 
