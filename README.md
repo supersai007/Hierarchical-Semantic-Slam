@@ -57,11 +57,8 @@ Generated using: [KISS-ICP](https://github.com/prbonn/kiss-icp)
 ```
 
 ## Final TF Structure
-```
-odom_lidar
-   └── livox_frame
-           └── D435_color_optical_frame
-```
+<img width="1341" height="442" alt="image" src="https://github.com/user-attachments/assets/1d4906e3-7dee-4885-9c6e-0f14d6be3b40" />
+
 Hydra configuration:
 1. odom_frame = odom_lidar
 2. robot_frame = livox_frame
