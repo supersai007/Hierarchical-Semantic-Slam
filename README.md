@@ -101,9 +101,9 @@ Fine-tuning pipeline for scene parsing datasets
 
 ## Dataset info
 
-uhumans2_office dataset: [https://drive.google.com/file/d/1Aqai_bhiL5viFu_wEMqURN2hPSW5-MkD/view?usp=sharing ](https://drive.google.com/file/d/1S4SiKUMylpYF9KxNLKE9AcwWhtFi2Zp6/view?usp=sharing)
+[uhumans2_office dataset](https://drive.google.com/file/d/1S4SiKUMylpYF9KxNLKE9AcwWhtFi2Zp6/view?usp=sharing)
 
-original lab dataset: [https://drive.google.com/file/d/1tzW6thTRXQ0bI0ww_szm42AGpsbLk6Ay/view?usp=sharing ](https://drive.google.com/drive/folders/1DKlsfPSnPgcTCvmx3LkXUU9TNChw3TUD)
+[original lab dataset](https://drive.google.com/drive/folders/1DKlsfPSnPgcTCvmx3LkXUU9TNChw3TUD)
 
 ```
 Files:             lab_walk_7526.db3
