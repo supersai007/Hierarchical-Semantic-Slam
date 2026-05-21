@@ -158,7 +158,7 @@ Topic information: Topic: /D435/accel/sample | Type: sensor_msgs/msg/Imu | Count
 Service:           0
 Service information:
 ```
-lab dataset with d455 semantics: https://drive.google.com/drive/folders/1HzE-JjuQW9Z4knpmpmrOJ0x-1N_37d2m?usp=drive_link
+[lab dataset with d455 semantics](https://drive.google.com/file/d/15ssJ8-2xTgHssCvLIy88-7w5TydJXEKb/view?usp=sharing)
 ```
 Files:             lab_walk_7526_wsemantics_0.db3
 Bag size:          11.7 GiB
