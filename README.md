@@ -131,7 +131,7 @@ Service:           0
 Service information:
 ```
 
-lab dataset with d435 semantics: https://drive.google.com/drive/folders/1cVhyTfSwNS9K3XPlIv7vX096oGBpYikr?usp=sharing
+[lab dataset with d435 semantics](https://drive.google.com/file/d/1GkAIFL8oy9xS5WE7pPhGXWFng-3-scAz/view?usp=drive_link)
 ```
 Files:             lab_walk_7526_wsemantics_0.db3
 Bag size:          13.9 GiB
