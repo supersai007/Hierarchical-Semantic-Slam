@@ -13,13 +13,13 @@ The project involved:
 6. Training and evaluating semantic segmentation models
 
 Directory:
-1. Notebooks: Notebook files used to explore different segmentation models
-2. colab_setup_files: files required to run segmentation on colab
-3. conv_bag_to_folders: script to convert bag file to image folders (one folder per topic)
-4. create_odom_topic: files required to create odomtery topic to bag file
-5. get_semantics: files required to create semantic topic from color image topic and merge with existing bag
-6. sem1_final_setup: contains final versions of launch and config files for semester 1
-7. training_on_uhumans: files required to train one_former model on uhumans dataset (refer to access_to_AI_cluster.txt for NvWulf cluster access)
+1. [Notebooks](https://github.com/supersai007/Hierarchical-Semantic-Slam/tree/main/Notebooks): Notebook files used to explore different segmentation models
+2. [colab_setup_files](https://github.com/supersai007/Hierarchical-Semantic-Slam/tree/main/colab_setup_files): files required to run segmentation on colab
+3. [conv_bag_to_folders](https://github.com/supersai007/Hierarchical-Semantic-Slam/tree/main/conv_bag_to_folders): script to convert bag file to image folders (one folder per topic)
+4. [create_odom_topic](https://github.com/supersai007/Hierarchical-Semantic-Slam/tree/main/create_odom_topic): files required to create odomtery topic to bag file
+5. [get_semantics](https://github.com/supersai007/Hierarchical-Semantic-Slam/tree/main/get_semantics): files required to create semantic topic from color image topic and merge with existing bag
+6. [sem1_final_setup](https://github.com/supersai007/Hierarchical-Semantic-Slam/tree/main/sem1_final_setup): contains final versions of launch and config files for semester 1
+7. [training_on_uhumans](https://github.com/supersai007/Hierarchical-Semantic-Slam/tree/main/training_on_uhumans): files required to train one_former model on uhumans dataset (refer to access_to_AI_cluster.txt for NvWulf cluster access)
 
 ## System Architecture
 Sensor Setup
