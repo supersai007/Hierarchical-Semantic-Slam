@@ -1,6 +1,6 @@
 ## Training data:
 
-drive link = https://drive.google.com/drive/folders/1X1t48VxJQLnXUQHUv0Yo4SCUoMJmUhGu?usp=sharing 
+drive link = [uHumans training data](https://drive.google.com/drive/folders/1xH0rSPIK35E8zABI7M5Jygcyna0UKWn4?usp=sharing)
 
 rgb_dir=f"{drive_path}/tesse_left_cam_rgb_image_raw"
 seg_dir=f"{drive_path}/tesse_seg_cam_converted_image_raw"
