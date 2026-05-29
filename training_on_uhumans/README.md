@@ -7,11 +7,11 @@ seg_dir=f"{drive_path}/tesse_seg_cam_converted_image_raw"
 
 ## Download dataset as zip files and send it to cluster env:
 
-scp *.zip <netid>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/<netid>/semantics/dataset/uhumans/
+scp *.zip netid@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/<netid>/semantics/dataset/uhumans/
 
 ## Send bag file to cluster env:
 
-scp -r "lab_walk" <netid>@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/<netid>/semantics/dataset/lab_walk/
+scp -r "lab_walk" netid@login.nvwulf.stonybrook.edu:/lustre/nvwulf/home/<netid>/semantics/dataset/lab_walk/
 
 #### create train_job.slurm script to run training script as job
 
