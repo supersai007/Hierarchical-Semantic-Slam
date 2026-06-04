@@ -13,4 +13,13 @@ ssh -N -L 7860:h200x8-01:7860 -L 5000:h200x8-01:5000 admanoharan@login.nvwulf.st
 ```
 
 ## Outputs
+<img width="1920" height="964" alt="Screenshot (225)" src="https://github.com/user-attachments/assets/e0161228-943f-47db-841e-75848b3e2ddd" />
+
+<img width="1920" height="962" alt="Screenshot (224)" src="https://github.com/user-attachments/assets/3ae79c88-e440-4668-94a7-fbfe7fe111f2" />
+
+<img width="1920" height="967" alt="Screenshot (223)" src="https://github.com/user-attachments/assets/723bed53-ddd4-464f-8fa4-b2785c2915ec" />
+
+[demo video](https://drive.google.com/file/d/189l74v_TW1MaaD117U4Noknf0zcwIIlO/view?usp=sharing)
+
+
 
